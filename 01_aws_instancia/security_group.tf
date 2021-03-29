@@ -2,7 +2,7 @@ resource "aws_security_group" "webserver" {
   name        = "${var.project_name}-http-https"
   description = "Allow ingress traffic for 80 and 443"
   vpc_id      = data.aws_vpc.default.id
-  
+
 
   ingress {
     description = "TLS from anywhere"
@@ -10,7 +10,7 @@ resource "aws_security_group" "webserver" {
     to_port     = 443
     protocol    = "tcp"
     cidr_blocks = [
-        "0.0.0.0/0"
+      "0.0.0.0/0"
     ]
   }
 
@@ -20,17 +20,17 @@ resource "aws_security_group" "webserver" {
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = [
-        "0.0.0.0/0"
+      "0.0.0.0/0"
     ]
   }
 
   egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
     cidr_blocks = [
-        "0.0.0.0/0"
-        ]
+      "0.0.0.0/0"
+    ]
   }
 
   tags = {
@@ -54,21 +54,26 @@ resource "aws_security_group" "ssh" {
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = [
-        "0.0.0.0/0"
+      "0.0.0.0/0"
     ]
   }
 
 
   egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
     cidr_blocks = [
-        "0.0.0.0/0"
-        ]
+      "0.0.0.0/0"
+    ]
   }
 
   tags = {
     Name = "Allow ssh connections"
   }
 }
+
+
+
+
+
