@@ -22,8 +22,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_delay_seconds"></a> [delay\_seconds](#input\_delay\_seconds) | delay seconds value. maps to delay seconds attribute on the queue. Delays the delivery to the queue | `string` | `"5"` | no |
-| <a name="input_queue_name"></a> [queue\_name](#input\_queue\_name) | Name of the queue to be created | `any` | n/a | yes |
+| <a name="input_delay_seconds"></a> [delay\_seconds](#input\_delay\_seconds) | delay seconds value. maps to delay seconds attribute on the queue. Delays the delivery to the queue | `number` | `5` | no |
+| <a name="input_queue_name"></a> [queue\_name](#input\_queue\_name) | Name of the queue to be created | `string` | n/a | yes |
 
 ## Outputs
 
